@@ -16,12 +16,12 @@
                 <MenuItem Header="Выход"></MenuItem>
             </MenuItem>
             <MenuItem Header="Помощь">
-                <MenuItem Header="О программе"></MenuItem>
+                <MenuItem Header="О программе" ></MenuItem>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
-                <TextBlock Text="1234" MinWidth="100" MaxWidth="300"/>
+                <TextBlock Text="{Binding Status}" MinWidth="100" MaxWidth="300"/>
             </StatusBarItem>
             <StatusBarItem>
                 <ProgressBar Width="120" Height="14" Value="50"/>
@@ -49,6 +49,7 @@
                     <GridSplitter Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"
                                   HorizontalAlignment="Right"
                                   Width="4"/>
+                    
                 </Grid>
             </TabItem>
             <TabItem Header="Вкладка 2">
