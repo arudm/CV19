@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="364,163,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.378,0.909"/>
+        <Button Content="Button" HorizontalAlignment="Left" Margin="192,172,0,0" VerticalAlignment="Top"/>
+        <Slider HorizontalAlignment="Left" Margin="238,93,0,0" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
