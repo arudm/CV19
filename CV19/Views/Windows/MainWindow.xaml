@@ -46,7 +46,6 @@
                     <fa:ImageAwesome Height="12" Icon="Regular_ArrowAltCircleRight"/>
                 </MenuItem.Header>
             </MenuItem>
-            <MenuItem Header="{Binding SelectedPageIndex}" IsEnabled="False"/>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
@@ -55,6 +54,7 @@
             <StatusBarItem>
                 <ProgressBar Width="120" Height="14" Value="50"/>
             </StatusBarItem>
+            <StatusBarItem Content="{Binding SelectedPageIndex}"/>
         </StatusBar>
         <TabControl SelectedIndex="{Binding SelectedPageIndex}">
             <TabItem>
