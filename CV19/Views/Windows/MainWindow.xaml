@@ -7,6 +7,8 @@
         xmlns:cmd="clr-namespace:CV19.Infrastructure.Commands"
         xmlns:fa="http://schemas.fontawesome.com/icons/"
         xmlns:l="clr-namespace:CV19"
+        xmlns:oxy="http://oxyplot.org/wpf"
+        xmlns:oxycontrols="http://oxyplot.org/wpf/contrib"
         Title="{Binding Title}" 
         Width="800" Height="450" >
     <Window.InputBindings>
@@ -44,14 +46,13 @@
             </StatusBarItem>
         </StatusBar>
         <TabControl>
-            <TabItem>
+            <TabItem Visibility="Collapsed">
                 <TabItem.Header>
                     <StackPanel Orientation="Horizontal">
                         <fa:ImageAwesome Icon="Regular_File" Height="13" 
                                          Margin="0,0,5,0" Foreground="Red"/>
                         <TextBlock Text="Вкладка 1"/>
                     </StackPanel>
-
                 </TabItem.Header>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -78,11 +79,19 @@
                     </Ellipse>
                     <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
                                   Width="4"/>
-
                 </Grid>
             </TabItem>
-            <TabItem Header="{Binding TestDataPoints[23].XValue}">
-
+            <TabItem Header="График">
+                <oxy:Plot>
+                    <oxy:Plot.Axes>
+                        <oxy:LinearAxis Position ="Left"/>
+                        <oxy:LinearAxis Position ="Bottom"/>
+                    </oxy:Plot.Axes>
+                    <oxy:LineSeries Color="Red"
+                                      ItemsSource="{Binding TestDataPoints}"
+                                      DataFieldX="XValue"
+                                      DataFieldY="YValue"/>
+                </oxy:Plot>
             </TabItem>
         </TabControl>
 
