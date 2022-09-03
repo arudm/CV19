@@ -13,9 +13,25 @@ namespace CV19.ViewModels
 {
     internal class MainWindowViewModel : ViewModel
 
-    {   
+    {
         /*-------------------------------------------------------------------------------------------------*/
+
         public ObservableCollection<Group> Groups { get; }
+
+        #region SelectedGroup : Group - Выбранная группа
+
+        /// <summary>Выбранная группа</summary>
+        private Group _SelectedGroup;
+
+        /// <summary>Выбранная группа</summary>
+        public Group SelectedGroup 
+        { 
+            get => _SelectedGroup; 
+            set => Set(ref _SelectedGroup, value); 
+        }
+
+        #endregion
+
         /// <summary>Выбранный индекс вкладки</summary>
         #region Выбранный индекс вкладки
         private int _SelectedPageIndex = 0;
