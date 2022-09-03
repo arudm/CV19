@@ -57,41 +57,6 @@
             <StatusBarItem Content="{Binding SelectedPageIndex}"/>
         </StatusBar>
         <TabControl SelectedIndex="{Binding SelectedPageIndex}">
-            <TabItem>
-                <TabItem.Header>
-                    <StackPanel Orientation="Horizontal">
-                        <fa:ImageAwesome Icon="Regular_File" Height="13" 
-                                         Margin="0,0,5,0" Foreground="Red"/>
-                        <TextBlock Text="Вкладка 1"/>
-                    </StackPanel>
-                </TabItem.Header>
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="103*"/>
-                        <RowDefinition Height="293*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="28*"/>
-                        <ColumnDefinition Width="35*"/>
-                        <ColumnDefinition Width="202*"/>
-                    </Grid.ColumnDefinitions>
-                    <Rectangle Grid.Row="0" Grid.Column="0"
-                               Margin="5,7,5,7"
-                               Fill="Blue" Stroke="Red" 
-                               StrokeThickness="3" 
-                               RadiusX="5" RadiusY="7" Grid.ColumnSpan="2"/>
-                    <Ellipse Grid.Row="0" Grid.Column="2"
-                             Fill="Red" Stroke="Blue"
-                             StrokeThickness="3" Margin="0,0,0,278" Grid.RowSpan="2">
-                        <Ellipse.InputBindings>
-                            <MouseBinding Command="{Binding CloseApplicationCommand}"
-                                          MouseAction="LeftDoubleClick"/>
-                        </Ellipse.InputBindings>
-                    </Ellipse>
-                    <GridSplitter Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
-                                  Width="4"/>
-                </Grid>
-            </TabItem>
             <TabItem Header="График">
                 <oxy:Plot>
                     <oxy:Plot.Axes>
@@ -104,9 +69,23 @@
                                       DataFieldY="YValue"/>
                 </oxy:Plot>
             </TabItem>
-            <TabItem Header="График"/>
-            <TabItem Header="График"/>
-            <TabItem Header="График"/>
+            <TabItem Header="Студенты">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <GroupBox Grid.Column="0" Header="Группы">
+                        <ListBox ItemsSource="{Binding Groups}" DisplayMemberPath="Name"></ListBox>
+                    </GroupBox>
+                    <GroupBox Grid.Column="1" Header="Студенты">
+                        <DataGrid> </DataGrid>
+                    </GroupBox>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Вкладка 2"/>
+            <TabItem Header="Вкладка 3"/>
+            <TabItem Header="Вкладка 4"/>
         </TabControl>
 
     </DockPanel>
