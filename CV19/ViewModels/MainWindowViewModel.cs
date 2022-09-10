@@ -38,10 +38,10 @@ namespace CV19.ViewModels
         private Group _SelectedGroup;
 
         /// <summary>Выбранная группа</summary>
-        public Group SelectedGroup 
-        { 
-            get => _SelectedGroup; 
-            set => Set(ref _SelectedGroup, value); 
+        public Group SelectedGroup
+        {
+            get => _SelectedGroup;
+            set => Set(ref _SelectedGroup, value);
         }
 
         #endregion
@@ -117,7 +117,7 @@ namespace CV19.ViewModels
         private bool CanChangeTabIndexCommandExecute(object p) => _SelectedPageIndex >= 0;
         private void OnChangeTabIndexCommandExecuted(object p)
         {
-            if (p is null ) return; 
+            if (p is null) return;
             SelectedPageIndex += Convert.ToInt32(p);
         }
 
@@ -160,16 +160,16 @@ namespace CV19.ViewModels
             ChangeTabIndexCommand = new LambdaCommand(OnChangeTabIndexCommandExecuted, CanChangeTabIndexCommandExecute);
             CreateNewGroupCommand = new LambdaCommand(OnCreateGroupCommandExecuted, CanCreateGroupCommandExecute);
             DeleteGroupCommand = new LambdaCommand(OnDeleteGroupCommandExecuted, CanDeleteGroupCommandExecute);
-            
+
             #endregion
 
-            var data_points = new List<DataPoint>((int)(360/0.1));
+            var data_points = new List<DataPoint>((int)(360 / 0.1));
             for (var x = 0d; x <= 360; x += 0.1)
             {
                 const double to_rad = Math.PI / 100;
                 var y = Math.Sin(x * to_rad);
 
-                data_points.Add(new DataPoint { XValue=x, YValue=y });
+                data_points.Add(new DataPoint { XValue = x, YValue = y });
             }
 
             TestDataPoints = data_points;
@@ -178,10 +178,10 @@ namespace CV19.ViewModels
             var students = Enumerable.Range(1, 10).Select(i => new Student()
             {
                 Name = $"Name {student_index}",
-                Surname=$"Surname {student_index}",
-                Patronymic=$"Patronymic {student_index++}",
-                Birthday=DateTime.Now,
-                Rating=0
+                Surname = $"Surname {student_index}",
+                Patronymic = $"Patronymic {student_index++}",
+                Birthday = DateTime.Now,
+                Rating = 0
             });
 
             var groups = Enumerable.Range(1, 20).Select(i => new Group()

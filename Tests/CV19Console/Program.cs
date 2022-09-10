@@ -22,7 +22,7 @@ namespace CV19Console
             {
                 var line = data_reader.ReadLine();
                 if (string.IsNullOrWhiteSpace(line)) continue;
-                yield return line.Replace("Korea,","Korea -").Replace("Bonaire,", "Bonaire -");
+                yield return line.Replace("Korea,", "Korea -").Replace("Bonaire,", "Bonaire -");
             }
         }
 
@@ -61,7 +61,7 @@ namespace CV19Console
             //Console.WriteLine(String.Join("\r\n", dates));
 
             var russia_data = GetData().First(v => v.Country.Equals("Russia", StringComparison.OrdinalIgnoreCase));
-        
+
             Console.WriteLine(String.Join("\r\n", GetDates().Zip(russia_data.Counts, (date, count) => $"{date}-{count}")));
         }
     }

@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style x:Key="BaseBtn" TargetType="ButtonBase">
+        <Setter Property="Background" Value="White"/>
+    </Style>
+
+    <Style x:Key="BlueBtn" TargetType="Button" BasedOn="{StaticResource BaseBtn}">
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Background" Value="Blue"/>
+        <Setter Property="Foreground" Value="WhiteSmoke"/>
+    </Style>
+
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource BaseBtn}">
+        <Setter Property="Background" Value="Red"/>
+    </Style>
+</ResourceDictionary>
